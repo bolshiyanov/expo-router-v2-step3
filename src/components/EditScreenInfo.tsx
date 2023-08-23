@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { ExternalLink } from './ExternalLink';
 import { Text, View } from './Themed';
 
-import Colors from '@/constants/Colors';
+import Colors from '@/src/constants/Colors';
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (

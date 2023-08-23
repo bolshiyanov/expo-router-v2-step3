@@ -1,25 +1,18 @@
-// Learn more https://docs.expo.io/guides/customizing-metro
+// const { getDefaultConfig } = require("../../expo/packages/@expo/metro-config");
 const { getDefaultConfig } = require("expo/metro-config");
 
-/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname, {
+  isCSSEnabled: true,
+});
 
-module.exports = (() => {
-  const config = getDefaultConfig(__dirname, {
-    // [Web-only]: Enables CSS support in Metro.
-    isCSSEnabled: true,
-  });
+config.resolver.sourceExts.push("svg");
 
-  const { transformer, resolver } = config;
+config.resolver.assetExts = config.resolver.assetExts.filter(
+  (ext) => !config.resolver.sourceExts.includes(ext)
+);
 
-  config.transformer = {
-    ...transformer,
-    babelTransformerPath: require.resolve("react-native-svg-transformer"),
-  };
-  config.resolver = {
-    ...resolver,
-    assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
-    sourceExts: [...resolver.sourceExts, "svg"],
-  };
+config.transformer.babelTransformerPath = require.resolve(
+  "./metro.transformer.js"
+);
 
-  return config;
-})();
+module.exports = config;

@@ -2,11 +2,11 @@
 import { Link, Tabs } from "expo-router";
 import { Pressable, useColorScheme } from "react-native";
 
-import Home from "@/assets/icons/house-solid.svg";
-import Heart from "@/assets/icons/heart-solid.svg";
-import City from "@/assets/icons/tree-city-solid.svg";
+import Home from "@/src/assets/icons/house-solid.svg";
+import Heart from "@/src/assets/icons/heart-solid.svg";
+import City from "@/src/assets/icons/tree-city-solid.svg";
 
-import Colors from "@/constants/Colors";
+import Colors from "@/src/constants/Colors";
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
