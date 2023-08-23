@@ -64,7 +64,7 @@ Follow these steps to incorporate SCSS:
 2. Configuring SCSS: Adjust your project settings to accommodate SCSS. This recent capability has unlocked new possibilities, allowing us to break free from the limitations of inline styles.
 
 - `tsconfig.json` :<br/>
-- `{`<br/>
+ `{`<br/>
   ` "compilerOptions": {`<br/>
     `   "baseUrl": ".",`<br/>
     ` "paths": {`<br/>
@@ -76,7 +76,7 @@ Follow these steps to incorporate SCSS:
 `}`<br/>
 
 - `metro.config.js`<br/>
-- `// const { getDefaultConfig } = require("../../expo/packages/@expo/metro-config");`<br/>
+ `// const { getDefaultConfig } = require("../../expo/packages/@expo/metro-config");`<br/>
 `const { getDefaultConfig } = require("expo/metro-config");`<br/>
 
 `const config = getDefaultConfig(__dirname, {`<br/>
@@ -92,6 +92,28 @@ Follow these steps to incorporate SCSS:
 `config.transformer.babelTransformerPath = require.resolve(`<br/>
   `  "./metro.transformer.js"`<br/>
 `);`<br/>
+
+- `metro.transformer.js`<br/>
+`const upstreamTransformer = require("metro-react-native-babel-transformer");`<br/>
+
+`module.exports.transform = async (props) => {`<br/>
+  `  if (props.filename.endsWith(".svg")) {`<br/>
+    `  return require("react-native-svg-transformer").transform(props);`<br/>
+  ` }`<br/>
+  ` // Then pass it to the upstream transformer`<br/>
+  ` return upstreamTransformer.transform(props);`<br/>
+`};`<br/>
+
+- `babel.config.js`<br/>
+
+`module.exports = function (api) {`<br/>
+ `   api.cache(true);`<br/>
+  `  return {`<br/>
+    `  presets: ["babel-preset-expo"],`<br/>
+    `  plugins: ["react-native-reanimated/plugin", "expo-router/babel"],`<br/>
+  `  };`<br/>
+`};`<br/>
+
 
 module.exports = config;
 
