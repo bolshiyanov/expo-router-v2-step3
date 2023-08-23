@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a aria-label="try expo with snack" href="https://github.com/bolshiyanov/expo-router-v2-step1"><b>This 1 step</b></a>
- | <a aria-label="try expo with snack" href="https://expo-router-v2-static-web-app-step-2.netlify.app/"><b>Look web site for 2 step</b></a>
+  <a aria-label="try expo with snack" href="https://github.com/bolshiyanov/expo-router-v2-step2"><b>This 2 step</b></a>
+ | <a aria-label="try expo with snack" href="https://expo-router-v2-static-web-app-step-3.netlify.app/"><b>Look web site for 3 step</b></a>
  |
-  <a aria-label="expo documentation" href="https://github.com/bolshiyanov/expo-router-v2-step3">Next 3 step 📚</a>
+  <a aria-label="expo documentation" href="https://github.com/bolshiyanov/expo-router-v2-step4">Next 4 step 📚</a>
 </p>
 
 ---
