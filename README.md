@@ -63,6 +63,18 @@ Follow these steps to incorporate SCSS:
 
 2. Configuring SCSS: Adjust your project settings to accommodate SCSS. This recent capability has unlocked new possibilities, allowing us to break free from the limitations of inline styles.
 
+- [`tsconfig.json`]:
+- [`{`
+  ` "compilerOptions": {`
+    `   "baseUrl": ".",`
+    ` "paths": {`
+      `   "@/*": ["./src/*"]`
+    `  }`
+  ` },`
+  ` "extends": "expo/tsconfig.base",`
+  ` "include": ["/*.ts", "/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]`
+`}
+
 ### Embracing the Future
 
 This seemingly small but incredibly significant step should not be overlooked. By adopting this architectural overhaul at the project's inception, you're setting the stage for future growth, scalability, and an enhanced development experience.
