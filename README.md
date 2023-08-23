@@ -75,6 +75,26 @@ Follow these steps to incorporate SCSS:
   ` "include": ["/*.ts", "/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]`<br/>
 `}`<br/>
 
+- `metro.config.js`<br/>
+- `// const { getDefaultConfig } = require("../../expo/packages/@expo/metro-config");`<br/>
+`const { getDefaultConfig } = require("expo/metro-config");`<br/>
+
+`const config = getDefaultConfig(__dirname, {`<br/>
+ `  isCSSEnabled: true,`<br/>
+`});`<br/>
+
+`config.resolver.sourceExts.push("svg");`<br/>
+
+`config.resolver.assetExts = config.resolver.assetExts.filter(`<br/>
+  `  (ext) => !config.resolver.sourceExts.includes(ext)`<br/>
+`);`<br/>
+
+`config.transformer.babelTransformerPath = require.resolve(`<br/>
+  `  "./metro.transformer.js"`<br/>
+`);`<br/>
+
+module.exports = config;
+
 ### Embracing the Future
 
 This seemingly small but incredibly significant step should not be overlooked. By adopting this architectural overhaul at the project's inception, you're setting the stage for future growth, scalability, and an enhanced development experience.
