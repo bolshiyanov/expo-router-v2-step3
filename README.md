@@ -6,7 +6,7 @@
     <h2 align="center">step by step tutorial </h2>
     <h3>Building Apps for Crafting Static Websites for Google and Other Social Networks, as well as a Mobile App for iOS and Android  </h3>
   </a>
-<h5 align="center"> <a aria-label="expo documentation" href="https://maps.menu">maps.menu 📚</a></h5>
+<h5 align="center"> <a aria-label="expo documentation" href="https://maps.menu">We are revamping this: maps.menu 📚</a></h5>
 </p>
 
 <p align="center">
